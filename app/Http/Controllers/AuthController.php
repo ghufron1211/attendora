@@ -49,7 +49,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'no_telp' => $request->no_telp,
             'asal_instansi' => $request->asal_instansi,
-            'password' => Hash::make($request->password),
+            'password' => $request->password,
             'face_data' => $request->face_data,
             'role' => 'user',
         ]);

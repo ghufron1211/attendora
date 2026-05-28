@@ -20,7 +20,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Attendora — Smart Internship Attendance & Monitoring Platform">
     <title>@yield('title', 'Dashboard') — Attendora</title>
-    <link rel="icon" type="image/png" href="{{ asset('storage/images/attendora-logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/attendora-logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
         {{-- Logo & Brand --}}
         <div class="sidebar-brand">
             <div class="sidebar-brand-logo-wrapper">
-                <img src="{{ asset('storage/images/attendora-logo.png') }}" alt="Attendora" class="sidebar-logo">
+                <img src="{{ asset('images/attendora-logo.png') }}" alt="Attendora" class="sidebar-logo">
             </div>
             <div style="text-align:center;">
                 <h1 style="font-size:18px;font-weight:800;margin:0;letter-spacing:-0.5px;color:var(--text-foreground);background:linear-gradient(135deg,var(--text-foreground) 0%,var(--text-secondary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Attendora</h1>
@@ -126,7 +126,7 @@
                 <button onclick="toggleCollapse()" id="collapseBtn" style="background:none;border:none;color:var(--text-secondary);cursor:pointer;display:none;align-items:center;justify-content:center;padding:4px;outline:none;">
                     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
                 </button>
-                <img src="{{ asset('storage/images/attendora-logo.png') }}" alt="Attendora" class="topbar-logo" style="width:36px;height:36px;">
+                <img src="{{ asset('images/attendora-logo.png') }}" alt="Attendora" class="topbar-logo" style="width:36px;height:36px;">
                 <div>
                     <h2 class="text-responsive-base" style="font-weight:600;margin:0;letter-spacing:-0.3px;color:var(--text-foreground);">@yield('title','Dashboard')</h2>
                     <p style="font-size:11px;color:var(--text-muted);margin:0;" class="user-profile-details">@yield('subtitle','')</p>

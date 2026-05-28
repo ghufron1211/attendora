@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
             'asal_instansi' => 'Attendora Platform',
             'role' => 'admin',
             'face_data' => 'dummy_admin_face_data',
-            'password' => Hash::make('password'),
+            'password' => 'admin123',
         ]);
 
         // ── 2. User Data (5 Mahasiswa & 10 Siswa) ──
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
                 'asal_instansi' => $student['instansi'],
                 'role' => 'user',
                 'face_data' => 'dummy_face_data',
-                'password' => Hash::make('password'),
+                'password' => 'password',
             ]);
         }
 
