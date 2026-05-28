@@ -31,20 +31,56 @@ Route::get('/debug-db', function () {
         
         // Reset/recreate admin on demand
         if (request('action') === 'reset') {
-            \Illuminate\Support\Facades\DB::table('users')->updateOrInsert(
-                ['email' => 'admin@gmail.com'],
-                [
-                    'username' => 'admin',
-                    'name' => 'Admin Mentor',
-                    'no_telp' => '081234567890',
-                    'asal_instansi' => 'Attendora Platform',
-                    'role' => 'admin',
-                    'face_data' => 'admin_face_data',
-                    'password' => \Illuminate\Support\Facades\Hash::make('admin123'),
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]
-            );
+            $hashedPassword = \Illuminate\Support\Facades\Hash::make('admin123');
+            $now = now();
+            
+            // Check if admin@gmail.com exists
+            $adminGmail = \Illuminate\Support\Facades\DB::table('users')->where('email', 'admin@gmail.com')->first();
+            if ($adminGmail) {
+                \Illuminate\Support\Facades\DB::table('users')
+                    ->where('email', 'admin@gmail.com')
+                    ->update([
+                        'password' => $hashedPassword,
+                        'role' => 'admin',
+                        'deleted_at' => null,
+                        'updated_at' => $now
+                    ]);
+            } else {
+                // Check if admin@admin.com exists (from old migration)
+                $adminOld = \Illuminate\Support\Facades\DB::table('users')->where('email', 'admin@admin.com')->first();
+                if ($adminOld) {
+                    \Illuminate\Support\Facades\DB::table('users')
+                        ->where('email', 'admin@admin.com')
+                        ->update([
+                            'email' => 'admin@gmail.com',
+                            'password' => $hashedPassword,
+                            'role' => 'admin',
+                            'deleted_at' => null,
+                            'updated_at' => $now
+                        ]);
+                } else {
+                    // Make sure username is unique
+                    $username = 'admin';
+                    $existingUsername = \Illuminate\Support\Facades\DB::table('users')->where('username', 'admin')->first();
+                    if ($existingUsername) {
+                        $username = 'admin_gmail';
+                    }
+                    
+                    \Illuminate\Support\Facades\DB::table('users')->insert([
+                        'username' => $username,
+                        'name' => 'Admin Mentor',
+                        'email' => 'admin@gmail.com',
+                        'no_telp' => '081234567890',
+                        'asal_instansi' => 'Attendora Platform',
+                        'role' => 'admin',
+                        'face_data' => 'admin_face_data',
+                        'password' => $hashedPassword,
+                        'created_at' => $now,
+                        'updated_at' => $now
+                    ]);
+                }
+            }
+
             return response()->json([
                 'success' => true,
                 'message' => 'Admin user created/updated successfully with email admin@gmail.com and password admin123',
