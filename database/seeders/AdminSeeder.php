@@ -2,48 +2,65 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
     /**
      * Ensure admin user exists with correct credentials.
-     * Safe to run multiple times (idempotent).
+     * Uses DB::table() to bypass Eloquent casts and explicitly hash.
      *
      * Email: admin@gmail.com
      * Password: admin123
      */
     public function run(): void
     {
-        $admin = User::withTrashed()->where('email', 'admin@gmail.com')->first();
+        $now = now();
+        $hashedPassword = Hash::make('admin123');
+
+        $admin = DB::table('users')->where('email', 'admin@gmail.com')->first();
 
         if ($admin) {
-            // Restore if soft-deleted
-            if ($admin->trashed()) {
-                $admin->restore();
-            }
-
-            // Update password (User model 'hashed' cast auto-hashes)
-            $admin->update([
-                'password' => 'admin123',
-                'role' => 'admin',
-            ]);
-
-            $this->command->info('✅ Admin user updated: admin@gmail.com / admin123');
+            DB::table('users')
+                ->where('email', 'admin@gmail.com')
+                ->update([
+                    'password' => $hashedPassword,
+                    'role' => 'admin',
+                    'deleted_at' => null,
+                    'updated_at' => $now,
+                ]);
+            $this->command->info('✅ Admin password reset: admin@gmail.com / admin123');
         } else {
-            User::create([
-                'username' => 'admin',
-                'name' => 'Admin Mentor',
-                'email' => 'admin@gmail.com',
-                'no_telp' => '081234567890',
-                'asal_instansi' => 'Attendora Platform',
-                'role' => 'admin',
-                'face_data' => 'admin_face_data',
-                'password' => 'admin123',
-            ]);
-
-            $this->command->info('✅ Admin user created: admin@gmail.com / admin123');
+            // Also check for old admin@admin.com from migration
+            $oldAdmin = DB::table('users')->where('email', 'admin@admin.com')->first();
+            if ($oldAdmin) {
+                DB::table('users')
+                    ->where('email', 'admin@admin.com')
+                    ->update([
+                        'email' => 'admin@gmail.com',
+                        'password' => $hashedPassword,
+                        'role' => 'admin',
+                        'deleted_at' => null,
+                        'updated_at' => $now,
+                    ]);
+                $this->command->info('✅ Admin migrated: admin@admin.com → admin@gmail.com / admin123');
+            } else {
+                DB::table('users')->insert([
+                    'username' => 'admin',
+                    'name' => 'Admin Mentor',
+                    'email' => 'admin@gmail.com',
+                    'no_telp' => '081234567890',
+                    'asal_instansi' => 'Attendora Platform',
+                    'role' => 'admin',
+                    'face_data' => 'admin_face_data',
+                    'password' => $hashedPassword,
+                    'created_at' => $now,
+                    'updated_at' => $now,
+                ]);
+                $this->command->info('✅ Admin created: admin@gmail.com / admin123');
+            }
         }
     }
 }
