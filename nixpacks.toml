@@ -1,0 +1,24 @@
+[variables]
+NIXPACKS_PHP_ROOT_DIR="/app/public"
+
+[phases.setup]
+nixPkgs = [
+"php83",
+"php83Packages.composer",
+"php83Extensions.gd",
+"nodejs_20"
+]
+
+[phases.install]
+cmds = [
+"composer install --no-dev --optimize-autoloader",
+"npm install"
+]
+
+[phases.build]
+cmds = [
+"npm run build"
+]
+
+[start]
+cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
