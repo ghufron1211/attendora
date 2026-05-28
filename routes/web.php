@@ -18,7 +18,7 @@ use App\Http\Controllers\HolidayController;
 
 // Redirect root to dashboard or login
 Route::get('/', function () {
-    return auth()->check() ? redirect('/dashboard') : redirect('/login');
+    return 'Attendora Railway Success';
 });
 
 // Guest routes
