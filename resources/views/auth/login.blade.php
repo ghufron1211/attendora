@@ -13,7 +13,7 @@
     <title>Login — Attendora</title>
     <link rel="icon" type="image/png" href="{{ asset('storage/images/attendora-logo.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         body, .login-card, .login-input, .login-btn {
             transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
