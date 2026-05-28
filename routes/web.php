@@ -23,6 +23,54 @@ Route::get('/', function () {
         : redirect('/login');
 });
 
+// Diagnostic route
+Route::get('/debug-db', function () {
+    try {
+        $dbConnection = config('database.default');
+        $dbName = config("database.connections.{$dbConnection}.database");
+        
+        // Reset/recreate admin on demand
+        if (request('action') === 'reset') {
+            \Illuminate\Support\Facades\DB::table('users')->updateOrInsert(
+                ['email' => 'admin@gmail.com'],
+                [
+                    'username' => 'admin',
+                    'name' => 'Admin Mentor',
+                    'no_telp' => '081234567890',
+                    'asal_instansi' => 'Attendora Platform',
+                    'role' => 'admin',
+                    'face_data' => 'admin_face_data',
+                    'password' => \Illuminate\Support\Facades\Hash::make('admin123'),
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]
+            );
+            return response()->json([
+                'success' => true,
+                'message' => 'Admin user created/updated successfully with email admin@gmail.com and password admin123',
+                'connection' => $dbConnection,
+                'database' => $dbName
+            ]);
+        }
+        
+        $users = \Illuminate\Support\Facades\DB::table('users')
+            ->select('id', 'username', 'email', 'role', 'created_at')
+            ->get();
+            
+        return response()->json([
+            'connection' => $dbConnection,
+            'database' => $dbName,
+            'users' => $users,
+            'message' => 'To reset or recreate the admin user, visit /debug-db?action=reset'
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'error' => $e->getMessage(),
+            'trace' => $e->getTraceAsString()
+        ], 500);
+    }
+});
+
 // Guest routes
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
