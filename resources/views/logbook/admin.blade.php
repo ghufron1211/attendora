@@ -591,13 +591,27 @@
                     </div>
                 </div>
                 {{-- TTD Mentor --}}
-                <div style="flex:1; min-width:200px;">
+                <div style="flex:1; min-width:180px;">
                     <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.8px; font-weight:700; display:block; margin-bottom:8px;">Tanda Tangan Mentor (Klik Zoom)</span>
                     <div style="width:100%; height:160px; border-radius:12px; border:1px solid var(--border-border); background:var(--bg-input); overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
                         <img id="detSignature" onclick="openZoomModal(this.src, true)" class="card-image sig-image" src="" style="max-height:140px; max-width:90%; object-fit:contain; filter:brightness(0.95); display:none;">
                         <div id="detSignaturePlaceholder" class="card-image-placeholder">Belum Di-approve</div>
                     </div>
                 </div>
+                {{-- TTD Pembimbing --}}
+                <div style="flex:1; min-width:180px;">
+                    <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.8px; font-weight:700; display:block; margin-bottom:8px;">Tanda Tangan Pembimbing (Klik Zoom)</span>
+                    <div style="width:100%; height:160px; border-radius:12px; border:1px solid var(--border-border); background:var(--bg-input); overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
+                        <img id="detSignaturePembimbing" onclick="openZoomModal(this.src, true)" class="card-image sig-image" src="" style="max-height:140px; max-width:90%; object-fit:contain; filter:brightness(0.95); display:none;">
+                        <div id="detSignaturePembimbingPlaceholder" class="card-image-placeholder">Belum Di-approve</div>
+                    </div>
+                </div>
+            </div>
+            
+            {{-- Komentar Pembimbing --}}
+            <div id="detCommentSection" style="margin-top:20px; display:none;">
+                <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.8px; font-weight:700; display:block; margin-bottom:8px;">Komentar Pembimbing</span>
+                <div style="font-size:13px; color:var(--text-secondary); font-style:italic; line-height:1.5; background:var(--bg-input); border:1px solid var(--border-border); padding:14px 18px; border-radius:12px;" id="detComment">-</div>
             </div>
         </div>
 
@@ -763,6 +777,30 @@
             sig.style.display = 'none';
             sigPlaceholder.style.display = 'flex';
             sigPlaceholder.textContent = lb.status === 'approved' ? 'Approved (Tanpa TTD)' : (lb.status === 'rejected' ? 'Rejected' : 'Belum Di-approve');
+        }
+
+        // TTD Pembimbing
+        const sigPem = document.getElementById('detSignaturePembimbing');
+        const sigPemPlaceholder = document.getElementById('detSignaturePembimbingPlaceholder');
+        if (lb.tanda_tangan_pembimbing) {
+            sigPem.src = lb.tanda_tangan_pembimbing;
+            sigPem.style.display = 'block';
+            sigPemPlaceholder.style.display = 'none';
+        } else {
+            sigPem.style.display = 'none';
+            sigPemPlaceholder.style.display = 'flex';
+            sigPemPlaceholder.textContent = lb.status === 'approved' ? 'Approved (Tanpa TTD)' : (lb.status === 'rejected' ? 'Rejected' : 'Belum Di-approve');
+        }
+
+        // Komentar Pembimbing
+        const commentSection = document.getElementById('detCommentSection');
+        const commentDiv = document.getElementById('detComment');
+        if (lb.komentar_pembimbing) {
+            commentDiv.textContent = lb.komentar_pembimbing;
+            commentSection.style.display = 'block';
+        } else {
+            commentDiv.textContent = '-';
+            commentSection.style.display = 'none';
         }
 
         // Logbook Status Badge

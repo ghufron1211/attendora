@@ -12,7 +12,9 @@ class Logbook extends Model
         'deskripsi',
         'foto_kegiatan',
         'status',
+        'komentar_pembimbing',
         'tanda_tangan_admin',
+        'tanda_tangan_pembimbing',
         'admin_id',
     ];
 
@@ -41,6 +43,7 @@ class Logbook extends Model
 
     public function attendance()
     {
-        return $this->hasOne(Attendance::class, 'user_id', 'user_id');
+        return $this->hasOne(Attendance::class, 'user_id', 'user_id')
+            ->whereColumn('tanggal', 'logbooks.tanggal');
     }
 }

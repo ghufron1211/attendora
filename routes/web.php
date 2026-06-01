@@ -23,6 +23,78 @@ Route::get('/', function () {
         : redirect('/login');
 });
 
+// Temporary Route for Database Migration & Seeding
+Route::get('/debug-db-seed', function () {
+    try {
+        // Run migration
+        \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+        
+        // Run seeder
+        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
+        
+        // Get counts
+        $totalUsers = \App\Models\User::count();
+        $totalAttendances = \App\Models\Attendance::count();
+        $totalLogbooks = \App\Models\Logbook::count();
+        $totalApproved = \App\Models\Logbook::where('status', 'approved')->count();
+        
+        // Get samples
+        $latestAttendances = \App\Models\Attendance::with('user')
+            ->orderBy('tanggal', 'desc')
+            ->orderBy('id', 'desc')
+            ->take(10)
+            ->get()
+            ->map(function ($att) {
+                return [
+                    'id' => $att->id,
+                    'user' => $att->user ? $att->user->name : 'Unknown',
+                    'tanggal' => $att->tanggal->toDateString(),
+                    'jam_masuk' => $att->jam_masuk,
+                    'jam_pulang' => $att->jam_pulang,
+                    'status' => $att->status,
+                    'device_info' => $att->device_info,
+                ];
+            });
+            
+        $latestLogbooks = \App\Models\Logbook::with('user', 'admin')
+            ->orderBy('tanggal', 'desc')
+            ->orderBy('id', 'desc')
+            ->take(10)
+            ->get()
+            ->map(function ($lb) {
+                return [
+                    'id' => $lb->id,
+                    'user' => $lb->user ? $lb->user->name : 'Unknown',
+                    'tanggal' => $lb->tanggal->toDateString(),
+                    'deskripsi' => $lb->deskripsi,
+                    'status' => $lb->status,
+                    'komentar_pembimbing' => $lb->komentar_pembimbing,
+                    'tanda_tangan_admin' => $lb->tanda_tangan_admin ? 'Base64 Present' : 'Null',
+                    'tanda_tangan_pembimbing' => $lb->tanda_tangan_pembimbing ? 'Base64 Present' : 'Null',
+                ];
+            });
+            
+        return response()->json([
+            'success' => true,
+            'message' => 'Database successfully migrated and seeded!',
+            'stats' => [
+                'total_users' => $totalUsers,
+                'total_attendances' => $totalAttendances,
+                'total_logbooks' => $totalLogbooks,
+                'total_approved' => $totalApproved,
+            ],
+            'latest_attendances_sample' => $latestAttendances,
+            'latest_logbooks_sample' => $latestLogbooks,
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'error' => $e->getMessage(),
+            'trace' => $e->getTraceAsString(),
+        ], 500);
+    }
+});
+
 // Guest routes
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');

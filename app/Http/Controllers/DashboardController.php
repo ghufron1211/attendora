@@ -51,7 +51,7 @@ class DashboardController extends Controller
                 $attendances = Attendance::whereMonth('tanggal', $month)->whereYear('tanggal', $year);
                 $tepat = (clone $attendances)->where('status', 'tepat_waktu')->count();
                 $terlambat = (clone $attendances)->where('status', 'terlambat')->count();
-                $tidakHadir = (clone $attendances)->where('status', 'tidak_hadir')->count();
+                $tidakHadir = (clone $attendances)->whereIn('status', ['tidak_hadir', 'izin', 'sakit'])->count();
                 $izin = (clone $attendances)->where('status', 'izin')->count();
                 $sakit = (clone $attendances)->where('status', 'sakit')->count();
                 $liburNasional = (clone $attendances)->where('status', 'libur_nasional')->count();
@@ -112,7 +112,7 @@ class DashboardController extends Controller
             $userStats = Attendance::select('user_id',
                     DB::raw("SUM(CASE WHEN status = 'tepat_waktu' THEN 1 ELSE 0 END) as tepat_count"),
                     DB::raw("SUM(CASE WHEN status = 'terlambat' THEN 1 ELSE 0 END) as lambat_count"),
-                    DB::raw("SUM(CASE WHEN status = 'tidak_hadir' THEN 1 ELSE 0 END) as alpa_count")
+                    DB::raw("SUM(CASE WHEN status IN ('tidak_hadir', 'izin', 'sakit') THEN 1 ELSE 0 END) as alpa_count")
                 )
                 ->whereMonth('tanggal', $month)
                 ->whereYear('tanggal', $year)
@@ -191,7 +191,7 @@ class DashboardController extends Controller
 
         $tepat = (clone $attendancesQuery)->where('status', 'tepat_waktu')->count();
         $terlambat = (clone $attendancesQuery)->where('status', 'terlambat')->count();
-        $tidakHadir = (clone $attendancesQuery)->where('status', 'tidak_hadir')->count();
+        $tidakHadir = (clone $attendancesQuery)->whereIn('status', ['tidak_hadir', 'izin', 'sakit'])->count();
         $izin = (clone $attendancesQuery)->where('status', 'izin')->count();
         $sakit = (clone $attendancesQuery)->where('status', 'sakit')->count();
         $liburNasional = (clone $attendancesQuery)->where('status', 'libur_nasional')->count();
@@ -263,7 +263,7 @@ class DashboardController extends Controller
         $allUserStats = Attendance::select('user_id',
                 DB::raw("SUM(CASE WHEN status = 'tepat_waktu' THEN 1 ELSE 0 END) as tepat_count"),
                 DB::raw("SUM(CASE WHEN status = 'terlambat' THEN 1 ELSE 0 END) as lambat_count"),
-                DB::raw("SUM(CASE WHEN status = 'tidak_hadir' THEN 1 ELSE 0 END) as alpa_count")
+                DB::raw("SUM(CASE WHEN status IN ('tidak_hadir', 'izin', 'sakit') THEN 1 ELSE 0 END) as alpa_count")
             )
             ->whereMonth('tanggal', $month)
             ->whereYear('tanggal', $year)
