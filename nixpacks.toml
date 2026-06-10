@@ -2,11 +2,15 @@
 # https://nixpacks.com/docs/configuration/file
 
 [phases.setup]
-nixPkgs = ["...", "nodejs_20"]
+nixPkgs = [
+  "...",
+  "nodejs_20",
+  "php82Extensions.gd"
+]
 
 [phases.install]
 cmds = [
-    "composer install --no-dev --optimize-autoloader",
+    "composer install --ignore-platform-req=ext-gd --no-dev --optimize-autoloader",
     "npm ci"
 ]
 
