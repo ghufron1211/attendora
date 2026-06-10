@@ -99,13 +99,22 @@ class LogbookController extends Controller
     public function adminIndex(Request $request)
     {
         $now = now();
+
+        // Determine if month/year filters are explicitly provided
+        $hasMonthFilter = $request->has('month');
+        $hasYearFilter = $request->has('year');
+
         $month = (int) $request->get('month', $now->month);
         $year = (int) $request->get('year', $now->year);
 
         $query = Logbook::with('user', 'admin')
-            ->whereMonth('tanggal', $month)
-            ->whereYear('tanggal', $year)
             ->orderBy('tanggal', 'desc');
+
+        // Only apply month/year filter when explicitly requested
+        if ($hasMonthFilter || $hasYearFilter) {
+            $query->whereMonth('tanggal', $month)
+                  ->whereYear('tanggal', $year);
+        }
 
         if ($request->has('status') && $request->status !== 'all' && $request->status !== '') {
             $query->where('status', $request->status);

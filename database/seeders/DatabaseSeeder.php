@@ -43,73 +43,118 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        // ── 15 Real Interns ──
+        // ── 34 Official Interns ──
         $interns = [
-            ['name' => 'Abdul Rauf Ghufron', 'username' => 'raufg', 'email' => 'raufg@student.ui.ac.id', 'instansi' => 'Universitas Indonesia'],
-            ['name' => 'Ahmad Fauzi', 'username' => 'fauzia', 'email' => 'fauzia@student.upnvj.ac.id', 'instansi' => 'UPN Veteran Jakarta'],
-            ['name' => 'Dinda Putri Anindya', 'username' => 'dindap', 'email' => 'dindap@student.gunadarma.ac.id', 'instansi' => 'Universitas Gunadarma'],
-            ['name' => 'Rizky Ramadhan', 'username' => 'rizkyr', 'email' => 'rizkyr@student.bsi.ac.id', 'instansi' => 'Universitas BSI'],
-            ['name' => 'Nabila Salsabila', 'username' => 'nabilas', 'email' => 'nabilas@student.pnj.ac.id', 'instansi' => 'Politeknik Negeri Jakarta'],
-            ['name' => 'Muhammad Fikri', 'username' => 'fikrim', 'email' => 'fikrim@student.ui.ac.id', 'instansi' => 'Universitas Indonesia'],
-            ['name' => 'Aulia Rahma', 'username' => 'auliar', 'email' => 'auliar@student.upnvj.ac.id', 'instansi' => 'UPN Veteran Jakarta'],
-            ['name' => 'Raka Pratama', 'username' => 'rakap', 'email' => 'rakap@student.gunadarma.ac.id', 'instansi' => 'Universitas Gunadarma'],
-            ['name' => 'Siti Nurhaliza', 'username' => 'sitin', 'email' => 'sitin@student.bsi.ac.id', 'instansi' => 'Universitas BSI'],
-            ['name' => 'M. Alif Akbar', 'username' => 'alifakbar', 'email' => 'alifakbar@student.pnj.ac.id', 'instansi' => 'Politeknik Negeri Jakarta'],
-            ['name' => 'Zahra Khairunnisa', 'username' => 'zahrak', 'email' => 'zahrak@student.ui.ac.id', 'instansi' => 'Universitas Indonesia'],
-            ['name' => 'Fajar Nugraha', 'username' => 'fajarn', 'email' => 'fajarn@student.upnvj.ac.id', 'instansi' => 'UPN Veteran Jakarta'],
-            ['name' => 'Intan Permata', 'username' => 'intanp', 'email' => 'intanp@student.gunadarma.ac.id', 'instansi' => 'Universitas Gunadarma'],
-            ['name' => 'Reza Maulana', 'username' => 'rezam', 'email' => 'rezam@student.bsi.ac.id', 'instansi' => 'Universitas BSI'],
-            ['name' => 'Putri Maharani', 'username' => 'putrim', 'email' => 'putrim@student.pnj.ac.id', 'instansi' => 'Politeknik Negeri Jakarta'],
+            // SMKN 71 Jakarta (DKV) - 2025-09-01 to 2025-12-31
+            ['name' => 'Dhanisa Nur Olistya F.', 'username' => 'dhanisanur', 'email' => 'dhanisa.nur@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'dkv', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Devina Reiska Putri', 'username' => 'devinar', 'email' => 'devina.reiska@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'dkv', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Maheswari Andhara Sutikno', 'username' => 'maheswaria', 'email' => 'maheswari.andhara@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'dkv', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Najma Aula Milady', 'username' => 'najmaa', 'email' => 'najma.aula@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'dkv', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            
+            // SMKN 71 Jakarta (RPL) - 2025-09-01 to 2025-12-31
+            ['name' => 'Adela Suci Wulandari Hasibuan', 'username' => 'adelas', 'email' => 'adela.suci@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Indah Callista Excella', 'username' => 'indahc', 'email' => 'indah.callista@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Rennard Adityatama', 'username' => 'rennarda', 'email' => 'rennard.aditya@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Reyhan Saputra', 'username' => 'reyhans', 'email' => 'reyhan.saputra@smkn71.sch.id', 'instansi' => 'SMKN 71 Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            
+            // UPN Veteran Jakarta (SI) - 2025-09-01 to 2025-12-31
+            ['name' => 'Isfiani Inayah', 'username' => 'isfianii', 'email' => 'isfiani.inayah@student.upnvj.ac.id', 'instansi' => 'Universitas Pembangunan Nasional "Veteran" Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Zanneti Dwi Darmawan', 'username' => 'zannetid', 'email' => 'zanneti.dwi@student.upnvj.ac.id', 'instansi' => 'Universitas Pembangunan Nasional "Veteran" Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Abdul Rauf Ghufron', 'username' => 'abdulraufg', 'email' => 'abdul.rauf@student.upnvj.ac.id', 'instansi' => 'Universitas Pembangunan Nasional "Veteran" Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Detarafa Putri Anindya', 'username' => 'detarafap', 'email' => 'detarafa.putri@student.upnvj.ac.id', 'instansi' => 'Universitas Pembangunan Nasional "Veteran" Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            ['name' => 'Muhammad Radiek Fidiyanto', 'username' => 'radiekf', 'email' => 'radiek.f@student.upnvj.ac.id', 'instansi' => 'Universitas Pembangunan Nasional "Veteran" Jakarta', 'major' => 'rpl', 'start' => '2025-09-01', 'end' => '2025-12-31'],
+            
+            // UNJ FIS (Humas) - 2026-01-12 to 2026-05-23
+            ['name' => 'Marcella Zeilanti Ramadhan', 'username' => 'marcellaz', 'email' => 'marcella.zeilanti@student.unj.ac.id', 'instansi' => 'Universitas Negeri Jakarta FIS', 'major' => 'humas', 'start' => '2026-01-12', 'end' => '2026-05-23'],
+            ['name' => 'Mela Agustia', 'username' => 'melaa', 'email' => 'mela.agustia@student.unj.ac.id', 'instansi' => 'Universitas Negeri Jakarta FIS', 'major' => 'humas', 'start' => '2026-01-12', 'end' => '2026-05-23'],
+            ['name' => 'Mohammad Arsha Syahdan', 'username' => 'arshas', 'email' => 'arsha.syahdan@student.unj.ac.id', 'instansi' => 'Universitas Negeri Jakarta FIS', 'major' => 'humas', 'start' => '2026-01-12', 'end' => '2026-05-23'],
+            ['name' => 'Jihan Salzabilla Winata', 'username' => 'jihans', 'email' => 'jihan.salzabilla@student.unj.ac.id', 'instansi' => 'Universitas Negeri Jakarta FIS', 'major' => 'humas', 'start' => '2026-01-12', 'end' => '2026-05-23'],
+            
+            // SMKN 51 Jakarta (Produksi TV) - 2025-12-01 to 2026-05-29
+            ['name' => 'Asyifa Indah Lestari', 'username' => 'asyifai', 'email' => 'asyifa.indah@smkn51.sch.id', 'instansi' => 'SMK Negeri 51 Jakarta', 'major' => 'tv', 'start' => '2025-12-01', 'end' => '2026-05-29'],
+            ['name' => 'Athaar Ismu Adji', 'username' => 'athaari', 'email' => 'athaar.ismu@smkn51.sch.id', 'instansi' => 'SMK Negeri 51 Jakarta', 'major' => 'tv', 'start' => '2025-12-01', 'end' => '2026-05-29'],
+            ['name' => 'Gidheon Adriano Sinulingga', 'username' => 'gidheons', 'email' => 'gidheon.adriano@smkn51.sch.id', 'instansi' => 'SMK Negeri 51 Jakarta', 'major' => 'tv', 'start' => '2025-12-01', 'end' => '2026-05-29'],
+            ['name' => 'Mahdiyah Maulida Hayoto', 'username' => 'mahdiyahm', 'email' => 'mahdiyah.maulida@smkn51.sch.id', 'instansi' => 'SMK Negeri 51 Jakarta', 'major' => 'tv', 'start' => '2025-12-01', 'end' => '2026-05-29'],
+            ['name' => 'Zahwa Alya Nur Septian', 'username' => 'zahwaa', 'email' => 'zahwa.alya@smkn51.sch.id', 'instansi' => 'SMK Negeri 51 Jakarta', 'major' => 'tv', 'start' => '2025-12-01', 'end' => '2026-05-29'],
+            ['name' => 'Singga Septianti', 'username' => 'singgas', 'email' => 'singga.septianti@smkn51.sch.id', 'instansi' => 'SMK Negeri 51 Jakarta', 'major' => 'tv', 'start' => '2025-12-01', 'end' => '2026-05-29'],
+            
+            // SMKN 17 Jakarta (RPL) - 2026-01-01 to 2026-05-31
+            ['name' => 'Nailah Salsabila Wityanto', 'username' => 'nailahs', 'email' => 'nailah.salsabila@smkn17.sch.id', 'instansi' => 'SMK Negeri 17 Jakarta', 'major' => 'rpl', 'start' => '2026-01-01', 'end' => '2026-05-31'],
+            ['name' => 'Eka Catur Putrianur', 'username' => 'ekac', 'email' => 'eka.catur@smkn17.sch.id', 'instansi' => 'SMK Negeri 17 Jakarta', 'major' => 'rpl', 'start' => '2026-01-01', 'end' => '2026-05-31'],
+            ['name' => 'Alya Dwi Andini', 'username' => 'alyad', 'email' => 'alya.dwi@smkn17.sch.id', 'instansi' => 'SMK Negeri 17 Jakarta', 'major' => 'rpl', 'start' => '2026-01-01', 'end' => '2026-05-31'],
+            ['name' => 'Reva Rahmania', 'username' => 'revar', 'email' => 'reva.rahmania@smkn17.sch.id', 'instansi' => 'SMK Negeri 17 Jakarta', 'major' => 'rpl', 'start' => '2026-01-01', 'end' => '2026-05-31'],
+            ['name' => 'Nafirah Fairuza Syarahil', 'username' => 'nafirahf', 'email' => 'nafirah.fairuza@smkn17.sch.id', 'instansi' => 'SMK Negeri 17 Jakarta', 'major' => 'rpl', 'start' => '2026-01-01', 'end' => '2026-05-31'],
+            
+            // SMKN 48 Jakarta (DKV) - 2026-01-05 to 2026-05-29
+            ['name' => 'Muhammad Rayhan', 'username' => 'rayhanm', 'email' => 'muhammad.rayhan@smkn48.sch.id', 'instansi' => 'SMK Negeri 48 Jakarta', 'major' => 'dkv', 'start' => '2026-01-05', 'end' => '2026-05-29'],
+            ['name' => 'Muhammad Wildan Djamaluddin', 'username' => 'wildand', 'email' => 'muhammad.wildan@smkn48.sch.id', 'instansi' => 'SMK Negeri 48 Jakarta', 'major' => 'dkv', 'start' => '2026-01-05', 'end' => '2026-05-29'],
+            ['name' => 'Nabila Mardian', 'username' => 'nabilam', 'email' => 'nabila.mardian@smkn48.sch.id', 'instansi' => 'SMK Negeri 48 Jakarta', 'major' => 'dkv', 'start' => '2026-01-05', 'end' => '2026-05-29'],
+            ['name' => 'Williem Cerolus', 'username' => 'willieme', 'email' => 'williem.cerolus@smkn48.sch.id', 'instansi' => 'SMK Negeri 48 Jakarta', 'major' => 'dkv', 'start' => '2026-01-05', 'end' => '2026-05-29'],
+            ['name' => 'Chintya Putri Nur Hidayat', 'username' => 'chintyap', 'email' => 'chintya.putri@smkn48.sch.id', 'instansi' => 'SMK Negeri 48 Jakarta', 'major' => 'dkv', 'start' => '2026-01-05', 'end' => '2026-05-29'],
+            ['name' => 'Octa Liga Herliana', 'username' => 'octal', 'email' => 'octa.liga@smkn48.sch.id', 'instansi' => 'SMK Negeri 48 Jakarta', 'major' => 'dkv', 'start' => '2026-01-05', 'end' => '2026-05-29'],
         ];
 
-        $hashedPassword = Hash::make('password');
+        $hashedPassword = Hash::make('magang123');
         $createdUsers = [];
 
         foreach ($interns as $intern) {
-            $createdUsers[] = User::create([
-                'username' => $intern['username'],
-                'name' => $intern['name'],
-                'email' => $intern['email'],
-                'no_telp' => '08' . rand(111111111, 999999999),
-                'asal_instansi' => $intern['instansi'],
-                'role' => 'user',
-                'face_data' => 'dummy_face_data',
-                'password' => $hashedPassword,
-            ]);
+            $createdUsers[] = [
+                'user' => User::create([
+                    'username' => $intern['username'],
+                    'name' => $intern['name'],
+                    'email' => $intern['email'],
+                    'no_telp' => '08' . rand(111111111, 999999999),
+                    'asal_instansi' => $intern['instansi'],
+                    'role' => 'user',
+                    'face_data' => 'dummy_face_data',
+                    'password' => $hashedPassword,
+                ]),
+                'major' => $intern['major'],
+                'start' => Carbon::parse($intern['start'])->startOfDay(),
+                'end' => Carbon::parse($intern['end'])->endOfDay(),
+            ];
         }
 
-        // Call HolidaySeeder to ensure holidays are in database
+        // Call HolidaySeeder to populate holidays table if empty
         $this->call(HolidaySeeder::class);
 
-        // ── 4 Months of History ──
-        $startDate = Carbon::now()->subMonths(4)->startOfDay();
-        $endDate = Carbon::now()->startOfDay();
-
-        // 20 Realistic Tasks (> 100 characters)
-        $logbookTasks = [
-            "Melakukan input data peserta magang baru ke dalam sistem absensi dan memverifikasi kelengkapan profil masing-masing pengguna agar tidak ada kesalahan data.",
-            "Melakukan validasi dokumen persyaratan administrasi magang milik peserta dari berbagai universitas untuk diserahkan ke divisi SDM.",
-            "Mengembangkan fitur absensi berbasis lokasi (geolocation) menggunakan Leaflet JS untuk mendeteksi koordinat presisi siswa saat melakukan clock-in.",
-            "Menganalisis log error pada server dan melakukan bug fixing terhadap masalah autentikasi session yang sering logout sendiri pada beberapa browser.",
-            "Melakukan testing aplikasi secara menyeluruh pada modul absensi dan logbook untuk memastikan alur pengajuan persetujuan berjalan tanpa kendala.",
-            "Merancang desain dashboard admin dan user yang lebih premium dan bersih menggunakan Figma, fokus pada kemudahan navigasi dan visualisasi grafik.",
-            "Melakukan analisis kebutuhan sistem untuk modul laporan bulanan guna menentukan field apa saja yang perlu diekspor ke dalam format Excel.",
-            "Melakukan entry data harian terkait jadwal libur nasional dan mencocokkannya dengan kalender akademik untuk sinkronisasi sistem absensi.",
-            "Melakukan monitoring kinerja server dan utilitas CPU/RAM selama jam masuk absensi pagi untuk memastikan tidak terjadi keterlambatan respon sistem.",
-            "Menyusun laporan mingguan mengenai progres pekerjaan tim pengembangan aplikasi dan mempresentasikannya kepada pembimbing lapangan.",
-            "Membuat dokumentasi teknis API endpoint sistem absensi serta petunjuk penggunaan (user guide) bagi admin dan peserta magang baru.",
-            "Mengikuti rapat evaluasi mingguan bersama seluruh peserta magang dan mentor untuk membahas kendala teknis serta pembagian tugas selanjutnya.",
-            "Melakukan integrasi API pihak ketiga untuk layanan sinkronisasi waktu server agar tidak bisa dimanipulasi oleh waktu lokal perangkat user.",
-            "Melakukan pengujian fungsionalitas fitur login multi-role (admin dan user) serta memvalidasi pesan kesalahan saat input data tidak sesuai.",
-            "Menguji fitur pengisian logbook harian termasuk validasi ukuran file foto kegiatan yang diunggah oleh peserta magang agar tetap optimal.",
-            "Melakukan backup database absensi secara terjadwal serta menguji proses restorasi data untuk mengantisipasi potensi kegagalan sistem.",
-            "Melakukan perbaikan UI/UX pada halaman login dan dashboard dengan menambahkan transisi halus serta palet warna monokrom yang lebih elegan.",
-            "Menganalisis indeks tabel absensi dan melakukan optimasi query database agar proses loading grafik dashboard menjadi jauh lebih cepat.",
-            "Membantu admin melakukan review data kehadiran mingguan peserta magang dan menandai absensi yang memerlukan tindak lanjut khusus.",
-            "Memulai penyusunan draf laporan akhir magang yang merangkum seluruh kontribusi proyek pengembangan sistem absensi selama periode magang."
+        // Major-specific logbooks (> 100 characters)
+        $tasksData = [
+            'dkv' => [
+                "Desain poster promosi untuk event internal perusahaan menggunakan palet warna monokrom agar terkesan modern, elegan, dan profesional.",
+                "Melakukan editing konten video pendek untuk dipublikasikan di media sosial Instagram dan TikTok dengan menambahkan teks transkrip lengkap.",
+                "Membuat panduan identitas visual (branding guidelines) untuk logo sistem absensi baru agar konsisten di semua media cetak maupun digital.",
+                "Merancang antarmuka UI/UX untuk dashboard absensi versi mobile, berfokus pada navigasi jempol yang ramah pengguna serta loading cepat.",
+                "Membuat ilustrasi vektor orisinal untuk melengkapi kebutuhan aset visual halaman login aplikasi agar terlihat interaktif dan futuristik.",
+                "Melakukan penyesuaian tata letak grid dan pilihan tipografi pada poster promosi agar informasi utama dapat dibaca lebih jelas dan terarah."
+            ],
+            'rpl' => [
+                "Mengembangkan logika backend API untuk integrasi modul absensi GPS, memastikan data koordinat diproses secara tepat dan aman.",
+                "Menulis skrip automated unit testing untuk memverifikasi alur registrasi user baru dengan berbagai variasi input data dan role.",
+                "Menganalisis log error pada server dan melakukan debugging masalah bottleneck query saat load data dashboard admin secara berkala.",
+                "Merancang arsitektur database relasional baru dan menambahkan relasi index pada tabel absensi agar proses select data jauh lebih cepat.",
+                "Membuat visualisasi grafik statistik persentase kehadiran bulanan di dashboard menggunakan library Chart JS yang responsif.",
+                "Mengimplementasikan middleware autentikasi role user untuk membatasi akses halaman absensi dan logbook khusus demi keamanan data."
+            ],
+            'humas' => [
+                "Menyusun draf konten publikasi media sosial mingguan untuk mengumumkan pencapaian kinerja magang serta jadwal rapat koordinasi penting.",
+                "Mengambil dokumentasi foto dan video berkualitas tinggi selama kegiatan kunjungan industri serta merapikan arsip visual humas.",
+                "Menulis naskah press release resmi mengenai peluncuran platform absensi internal baru untuk dikirimkan ke portal berita lokal terpercaya.",
+                "Menghubungi perwakilan universitas mitra magang untuk melakukan konfirmasi jadwal kunjungan monitoring serta evaluasi bulanan rutin.",
+                "Menyusun laporan sentimen publik terkait rilis fitur baru di platform dari komentar-komentar pengguna di media sosial perusahaan.",
+                "Mempersiapkan materi presentasi humas yang akan dibawakan dalam rapat evaluasi bersama mentor dan dewan pembimbing magang."
+            ],
+            'tv' => [
+                "Melakukan proses editing video profil perusahaan dengan menambahkan efek transisi halus serta sinkronisasi musik latar yang menarik.",
+                "Membantu proses shooting video tutorial penggunaan aplikasi absensi, bertindak sebagai pengatur tata cahaya dan penata kamera di studio.",
+                "Memproduksi konten video pendek edukasi seputar tips kedisiplinan kerja untuk diunggah ke platform berbagi video internal.",
+                "Melakukan dubbing suara (voice over) serta sinkronisasi audio untuk video dokumenter akhir tahun tim magang secara profesional.",
+                "Menyusun storyboard detail untuk video promosi fitur baru sistem absensi agar memudahkan proses pengambilan gambar lapangan.",
+                "Melakukan proses rendering video dengan format yang optimal agar ukuran file tidak terlalu besar saat diunggah ke media sosial."
+            ]
         ];
 
-        // Comments
+        // Supervisor comments
         $approvedComments = [
             "Kerja sudah baik, pertahankan.",
             "Sudah sesuai instruksi.",
@@ -119,35 +164,29 @@ class DatabaseSeeder extends Seeder
             "Pekerjaan diselesaikan dengan baik dan rapi."
         ];
 
-        $rejectedComments = [
-            "Dokumentasi perlu dilengkapi.",
-            "Perbaiki detail laporan harian.",
-            "Deskripsi kurang detail, silakan jelaskan lebih rinci apa yang dikerjakan.",
-            "Foto kegiatan kurang jelas atau tidak sesuai, tolong diunggah ulang.",
-            "Aktivitas tidak sesuai dengan target mingguan, silakan direvisi."
-        ];
-
-        // Distinct base64 transparent signatures
+        // Base64 transparent signatures
         $adminSignature = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAYAAACqKw8UAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5gYMDQcKCBgVDAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAADSUlEQVR42u2aXUiTYRjHf+/77reZ27RpaWmhUUGFFhFCF3XRXSiGXaVdRFd1E3SRXUQQXnQTRFeFdRGFhVBhF0GEWUBURCGYmS/N2ea+77tOC0U/Nqe1NWev+d944Pnhgff9v+d9n+e8z3nOU1BQUFBQUFBQUFD+D0g05gJomqYoikJKiWmaKKX291sU7bVomqYoikJKiWmaKKX291sU7bVomqYoikJKWbT3bE/T1B91Wdb9nFPD97M9dK89GnMBNI2UkpQSXdfD3d93NMb4f/v7vV3N/+2P/+/4w/8Q/2P8gf8x/sD/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8D/GH/gf4w/8j/EH/sf4A/9j/IH/Mf7A/1ixv7Ue/P0s4H+KxljR3n7Of5t/GX8A42mEAAAAAElFTkSuQmCC';
         $pembimbingSignature = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAYAAACqKw8UAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5gYMDQcKCBgVDAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAADSUlEQVR42u3az0tUURgH8O+578yMZv7IaEqLqChwEUTYRlCif0GLVq1atWrVIrRoEUTQopUQtGgVREQhWkiFIIoiM6fJ+eG8e02LqPkwp7U15+7v5oHnhwfe7z3n3HPuuY8IIYQQQgghhBBCCH8HUp/bAaVURCnFKaU4pRRVVeW7rV5rD5VSUUr5hFKKU4pTSlFVVb7b6rX2UClVEaWUp5TiKaWYqqr8f9eT/V0l32vzevtP3Uv32n9j24HaRkpJSklKSerq6vJ6X5Ikyf733f3+v/2t/+2v7/92j9/9jfHfxx/4H+MP/I/xB/7H+AP/Y/yB/zH+wP8Yf+B/jD/wP9rf+N9aDv5sF/D2NsXy9vc3z71vvGf8BmqiHjP+AzVRD/gAAAABJRU5ErkJggg==';
 
-        $totalDays = (int) $startDate->diffInDays($endDate);
+        foreach ($createdUsers as $data) {
+            $user = $data['user'];
+            $major = $data['major'];
+            $currentDate = $data['start']->copy();
+            $endDate = $data['end'];
 
-        for ($d = $totalDays; $d >= 0; $d--) {
-            $currentDate = Carbon::now('Asia/Jakarta')->subDays($d);
-            $dateStr = $currentDate->toDateString();
+            while ($currentDate->lte($endDate)) {
+                $dateStr = $currentDate->toDateString();
 
-            // Skip weekends
-            if (\App\Helpers\HolidayHelper::isWeekend($currentDate)) {
-                continue;
-            }
+                // Skip weekends
+                if (\App\Helpers\HolidayHelper::isWeekend($currentDate)) {
+                    $currentDate->addDay();
+                    continue;
+                }
 
-            // Check if holiday
-            $holidayName = \App\Helpers\HolidayHelper::getHolidayName($currentDate);
+                // Check holiday
+                $holidayName = \App\Helpers\HolidayHelper::getHolidayName($currentDate);
 
-            foreach ($createdUsers as $user) {
                 if ($holidayName !== null) {
-                    // Create national holiday record
                     Attendance::create([
                         'user_id' => $user->id,
                         'tanggal' => $dateStr,
@@ -159,18 +198,18 @@ class DatabaseSeeder extends Seeder
                         'status' => 'libur_nasional',
                         'device_info' => 'Holiday System Seeder',
                     ]);
+                    $currentDate->addDay();
                     continue;
                 }
 
-                // Roll status: 82% tepat_waktu, 12% terlambat, 6% absent/sakit/izin
+                // Roll status: 85% tepat_waktu, 10% terlambat, 5% absent
                 $roll = rand(1, 100);
 
-                if ($roll <= 82) {
+                if ($roll <= 85) {
                     $status = 'tepat_waktu';
-                } elseif ($roll <= 94) {
+                } elseif ($roll <= 95) {
                     $status = 'terlambat';
                 } else {
-                    // Absent distribution: 50% sakit, 50% izin
                     $status = rand(1, 2) === 1 ? 'sakit' : 'izin';
                 }
 
@@ -208,7 +247,7 @@ class DatabaseSeeder extends Seeder
                     // Sickness or Permission
                     $reasons = [
                         'sakit' => ['Sakit Demam Tinggi', 'Sakit Flu & Batuk', 'Sakit Pencernaan'],
-                        'izin' => ['Izin Kampus - Seminar Kerja Praktek', 'Izin Kampus - Wisuda Kakak', 'Izin Keperluan Keluarga', 'Izin Wawancara Tugas Akhir']
+                        'izin' => ['Izin Kampus - Seminar Tugas Akhir', 'Izin Kampus - Sidang PKL', 'Izin Keperluan Keluarga', 'Izin Wawancara Akademik']
                     ];
                     $selectedReason = $reasons[$status][array_rand($reasons[$status])];
                     $deviceInfo = 'Alasan: ' . $selectedReason;
@@ -229,40 +268,21 @@ class DatabaseSeeder extends Seeder
 
                 // Save Logbook for present days (tepat_waktu or terlambat)
                 if (in_array($status, ['tepat_waktu', 'terlambat'])) {
-                    // Roll approval: 85% approved, 10% pending, 5% rejected
-                    $lbRoll = rand(1, 100);
-                    if ($lbRoll <= 85) {
-                        $lbStatus = 'approved';
-                        $adminId = $admin->id;
-                        $comment = $approvedComments[array_rand($approvedComments)];
-                        $ttdAdmin = $adminSignature;
-                        $ttdPembimbing = $pembimbingSignature;
-                    } elseif ($lbRoll <= 95) {
-                        $lbStatus = 'pending';
-                        $adminId = null;
-                        $comment = null;
-                        $ttdAdmin = null;
-                        $ttdPembimbing = null;
-                    } else {
-                        $lbStatus = 'rejected';
-                        $adminId = $admin->id;
-                        $comment = $rejectedComments[array_rand($rejectedComments)];
-                        $ttdAdmin = null;
-                        $ttdPembimbing = null;
-                    }
-
+                    // Approved by both pembimbing & admin, with both signatures and comments
                     Logbook::create([
                         'user_id' => $user->id,
                         'tanggal' => $dateStr,
-                        'deskripsi' => $logbookTasks[array_rand($logbookTasks)],
+                        'deskripsi' => $tasksData[$major][array_rand($tasksData[$major])],
                         'foto_kegiatan' => 'logbooks/dummy_kegiatan.jpg',
-                        'status' => $lbStatus,
-                        'komentar_pembimbing' => $comment,
-                        'tanda_tangan_admin' => $ttdAdmin,
-                        'tanda_tangan_pembimbing' => $ttdPembimbing,
-                        'admin_id' => $adminId,
+                        'status' => 'approved',
+                        'komentar_pembimbing' => $approvedComments[array_rand($approvedComments)],
+                        'tanda_tangan_admin' => $adminSignature,
+                        'tanda_tangan_pembimbing' => $pembimbingSignature,
+                        'admin_id' => $admin->id,
                     ]);
                 }
+
+                $currentDate->addDay();
             }
         }
     }
