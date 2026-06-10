@@ -42,8 +42,7 @@ class Logbook extends Model
     }
 
     public function attendance()
-    {
-        return $this->hasOne(Attendance::class, 'user_id', 'user_id')
-            ->whereColumn('tanggal', 'logbooks.tanggal');
-    }
+{
+    return $this->hasOne(Attendance::class, 'user_id', 'user_id');
+}
 }

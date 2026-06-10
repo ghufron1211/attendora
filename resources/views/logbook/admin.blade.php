@@ -470,7 +470,7 @@
 
             {{-- Footer Action Buttons --}}
             <div class="card-actions">
-                <button onclick="openDetailModal({{ json_encode($lb->load('user', 'admin', 'attendance')) }})" class="btn-action-premium btn-action-detail">Detail</button>
+                <button onclick="openDetailModal({{ json_encode($lb) }})" class="btn-action-premium btn-action-detail">Detail</button>
                 
                 @if($lb->status === 'pending')
                     <div style="display:flex; gap:8px;">
