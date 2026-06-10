@@ -2,7 +2,7 @@
 nixPkgs = [
   "...",
   "nodejs_20",
-  "php82Extensions.gd"
+  "gd"
 ]
 
 [phases.install]
