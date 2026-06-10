@@ -1,20 +1,22 @@
-# Nixpacks configuration for Railway deployment
-
 [phases.setup]
-nixPkgs = ["...", "nodejs_20"]
+nixPkgs = [
+  "...",
+  "nodejs_20",
+  "php82Extensions.gd"
+]
 
 [phases.install]
 cmds = [
-    "composer install --ignore-platform-req=ext-gd --no-dev --optimize-autoloader",
-    "npm ci"
+  "composer install --no-dev --optimize-autoloader",
+  "npm ci"
 ]
 
 [phases.build]
 cmds = [
-    "npm run build",
-    "php artisan optimize",
-    "php artisan storage:link || true"
+  "npm run build",
+  "php artisan optimize",
+  "php artisan storage:link || true"
 ]
 
 [start]
-cmd = "php artisan migrate --force && php artisan db:seed --class=AdminSeeder --force && php artisan storage:link 2>/dev/null; php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
+cmd = "php artisan migrate --force && php artisan db:seed --class=AdminSeeder --force && php artisan storage:link || true && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
